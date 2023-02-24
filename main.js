@@ -37,7 +37,10 @@ connection.once('open', function() {
 })
 
 // setup API endpoints
-app.post("/",req.send("sfsdf"))
+app.post("/",(req,res)=>{
+res.send("dfsdf");
+})
+
 app.use("/api/testAPI", testAPIRouter);
 app.use("/api/user", UserRouter);
 app.use("/api/job", JobRouter);
