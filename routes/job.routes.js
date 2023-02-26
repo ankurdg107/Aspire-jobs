@@ -32,18 +32,21 @@ router.get("/:id", function(req, res) {
     .catch(err => console.log(err));
 });
 
+
 // POST request 
 // Add a job to db
 router.post("/add_job", (req, res) => {
 
-    if (user.type != "recruiter") {
-        res.status(401).json({
-          message: "You don't have permissions to add jobs",
-        });
-        return;
-      }
+    // if (user.type != "recruiter") {
+    //     res.status(401).json({
+    //       message: "You don't have permissions to add jobs",
+    //     });
+    //     return;
+    //   }
 
-      
+
+
+
     const newJob = new Job({
         recruiter: req.body.recruiter, // Company name
         recruiterName: req.body.recruiterName,
@@ -61,12 +64,14 @@ router.post("/add_job", (req, res) => {
 
     newJob.save()
         .then(job => {
-            res.status(200).json(job);
+            res.status(200).json(newJob);
         })
         .catch(err => {
-            res.status(400).send(job);
+            res.status(400).send(newJob);
         });
 });
+
+
 
 // PUT Request
 // Edit Job Details
