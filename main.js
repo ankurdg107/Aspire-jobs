@@ -38,7 +38,7 @@ connection.once('open', function() {
 
 // setup API endpoints
 app.get("/",(req,res)=>{
-res.send("dfsdf");
+res.send("Hello");
 })
 
 app.use("/api/testAPI", testAPIRouter);

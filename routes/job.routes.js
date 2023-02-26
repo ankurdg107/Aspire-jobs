@@ -6,6 +6,14 @@ const Job = require("../models/job.model");
 
 // GET request 
 // Getting all the jobs
+
+router.get("/", (req, res) => {
+
+res.redirect("./job/get_jobs");
+
+})
+
+
 router.get("/get_jobs", function(req, res) {
     Job.find(function(err, jobs) {
 		if (err) {
@@ -28,7 +36,7 @@ router.get("/:id", function(req, res) {
 // Add a job to db
 router.post("/add_job", (req, res) => {
     const newJob = new Job({
-        recruiter: req.body.recruiter,
+        recruiter: req.body.recruiter, // Company name
         recruiterName: req.body.recruiterName,
         recruiterEmail: req.body.recruiterEmail,
         title: req.body.title,
@@ -36,14 +44,8 @@ router.post("/add_job", (req, res) => {
         type: req.body.type,
         duration: req.body.duration,
         salary: req.body.salary,
-        appmax: req.body.appmax,
-        numapp: req.body.numapp,
-        posmax: req.body.posmax,
-        numpos: req.body.numpos,
         address: req.body.address,
         skills: req.body.skills,
-        rating: req.body.rating,
-        numrate: req.body.numrate,
         dateOfPost: req.body.dateOfPost,
         deadline: req.body.deadline,
     });

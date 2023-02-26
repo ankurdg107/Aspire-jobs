@@ -31,43 +31,35 @@ const userSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
-	rating: {
-        type: Number,
-        default: 5
-	},
-	profile_image: {
-        type: String,
-        // default: 'default-profile-image.jpg'
-	},
-	numapp: {
-		type: Number,
-		default: 0
-	},
-	numrate: {
-        type: Number,
-        default: 0
-	},
+	// profile_image: {
+    //     type: String,
+    //     // default: 'default-profile-image.jpg'
+	// },
 	//recruiter
 	phone_number: {
         type: Number
     },
-    bio: {
-        type: String,
-	},
+
+    // bio: {
+    //     type: String,
+	// },
 	// applicant
-	education: {
-        type: [education.schema]
-    },
-    skills: {
-        type: [String]
-    },
-    resume: {
-        type: String
-	},
-	working: {
-		type: Boolean,
-		default: false
-    }
+	// education: {
+    //     type: [education.schema]
+    // },
+
+    // skills: {
+    //     type: [String]
+    // },
+
+    // resume: {
+    //     type: String
+	// },
+
+	// working: {
+	// 	type: Boolean,
+	// 	default: false
+    // }
 });
 
 module.exports = User = mongoose.model("User", userSchema);

@@ -71,6 +71,7 @@ const jobSchema = new Schema({
     },
     type: {
         type: String,
+        enum: ['online', 'offline']
         //required: true
     },
     duration: {
@@ -80,16 +81,7 @@ const jobSchema = new Schema({
     salary: {
         type: Number,
     },
-    app: {
-        type: Number,
-        default: 0
-    },
-    appmax: {
-        type: Number,
-    },
-    numapp: {
-        type: Number,
-    },
+   
     address: {
         type: String,
         //required: true
@@ -98,19 +90,7 @@ const jobSchema = new Schema({
         type: [String],
         //required: true
     },
-    rating: {
-        type: Number,
-        //default: 5
-    },
-    numrate: {
-        type: Number,
-    },
-    posmax: {
-        type: Number,
-    },
-    numpos: {
-        type: Number,
-    },
+   
     dateOfPost: {
         type: Date,
         default: new Date()
