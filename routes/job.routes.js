@@ -35,6 +35,15 @@ router.get("/:id", function(req, res) {
 // POST request 
 // Add a job to db
 router.post("/add_job", (req, res) => {
+
+    if (user.type != "recruiter") {
+        res.status(401).json({
+          message: "You don't have permissions to add jobs",
+        });
+        return;
+      }
+
+      
     const newJob = new Job({
         recruiter: req.body.recruiter, // Company name
         recruiterName: req.body.recruiterName,

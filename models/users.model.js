@@ -24,8 +24,8 @@ const userSchema = new Schema({
 	role: {
 		type: String,
 		required: true,
-		enum: ['applicant', 'recruiter'],
-		default: 'applicant'
+		enum: ['recruiter'],
+		default: 'recruiter'
 	},
 	date:{
 		type: Date,
