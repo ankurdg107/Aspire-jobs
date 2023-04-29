@@ -25,16 +25,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 // To localhost
-mongoose.connect('mongodb+srv://Ankur:1234@nodeprojects.sv0tc.mongodb.net/Jobs?retryWrites=true&w=majority', { useNewUrlParser: true,
-useUnifiedTopology: true,
-useCreateIndex: true,
-useFindAndModify: true, });
-const connection = mongoose.connection;
+// mongoose.connect('mongodb+srv://Ankur:123@nodeprojects.sv0tc.mongodb.net/Jobs?retryWrites=true&w=majority', { useNewUrlParser: true,
+// useUnifiedTopology: true,
+// useCreateIndex: true,
+// useFindAndModify: true, });
+// const connection = mongoose.connection;
 
 
-connection.once('open', function() {
-    console.log("MongoDB database connection established successfully !");
-})
+// connection.once('open', function() {
+//     console.log("MongoDB database connection established successfully !");
+// })
 
 // setup API endpoints
 app.get("/",(req,res)=>{
